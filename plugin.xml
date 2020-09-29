@@ -18,7 +18,7 @@
 	<platform name="android">
 		<config-file parent="/*" target="res/xml/config.xml">
 			<feature name="Avram">
-				<param name="android-package" value="cordova.plugin.Avram"/>
+				<param name="android-package" value="cordova.plugin.avram.Avram"/>
 			</feature>
 		</config-file>
 
