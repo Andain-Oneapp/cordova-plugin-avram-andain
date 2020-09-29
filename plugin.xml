@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-avram-andain" version="1.0.0"
+<plugin id="cordova-plugin-avram" version="1.0.0"
 	xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools">
@@ -18,7 +18,7 @@
 	<platform name="android">
 		<config-file parent="/*" target="res/xml/config.xml">
 			<feature name="AVRAM">
-				<param name="android-package" value="cordova.plugin.andain.avram"/>
+				<param name="android-package" value="cordova.plugin.avram"/>
 			</feature>
 		</config-file>
 
@@ -30,6 +30,6 @@
 			<uses-permission android:name="android.permission.WAKE_LOCK" />
 			<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 		</config-file> -->
-		<source-file src="src/android/AVRAM.java" target-dir="src/cordova/plugin/andain/avram"/>
+		<source-file src="src/android/AVRAM.java" target-dir="src/cordova/plugin/avram"/>
 	</platform>
 </plugin>
