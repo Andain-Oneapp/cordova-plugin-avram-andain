@@ -4,21 +4,21 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools">
 
-	<name>AVRAM</name>
+	<name>Avram</name>
 
 	<engines>
 		<engine name="cordova" version=">=5.0.0"/>
 	</engines>
 
-	<js-module name="AVRAM" src="www/AVRAM.js">
-		<clobbers target="AVRAM"/>
+	<js-module name="Avram" src="www/Avram.js">
+		<clobbers target="Avram"/>
 	</js-module>
 
 
 	<platform name="android">
 		<config-file parent="/*" target="res/xml/config.xml">
-			<feature name="AVRAM">
-				<param name="android-package" value="cordova.plugin.avram"/>
+			<feature name="Avram">
+				<param name="android-package" value="cordova.plugin.Avram"/>
 			</feature>
 		</config-file>
 
@@ -30,6 +30,6 @@
 			<uses-permission android:name="android.permission.WAKE_LOCK" />
 			<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 		</config-file> -->
-		<source-file src="src/android/AVRAM.java" target-dir="src/cordova/plugin/avram"/>
+		<source-file src="src/android/Avram.java" target-dir="src/cordova/plugin/avram"/>
 	</platform>
 </plugin>
