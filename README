@@ -1,0 +1,3 @@
+#### Instalación del plugin
+
+* ionic cordova plugin add git+git@git.andain.cl:ffuentes/cordova-plugin-avram-andain.git --nofetch --verbose
