@@ -14,7 +14,6 @@
 		<clobbers target="Avram"/>
 	</js-module>
 
-
 	<platform name="android">
 		<config-file parent="/*" target="res/xml/config.xml">
 			<feature name="Avram">
@@ -22,14 +21,7 @@
 			</feature>
 		</config-file>
 
-		<!-- <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest" mode="merge" xmlns:tools="http://schemas.android.com/tools">
-			<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-			<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-			<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-			<uses-permission android:name="android.permission.INTERNET" />
-			<uses-permission android:name="android.permission.WAKE_LOCK" />
-			<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-		</config-file> -->
 		<source-file src="src/android/Avram.java" target-dir="src/cordova/plugin/avram"/>
+		<source-file src="src/android/Response.java" target-dir="src/cordova/plugin/avram"/>
 	</platform>
 </plugin>
