@@ -1,5 +1,8 @@
 #import "Avram.h"
 
+#import <mach/mach.h>
+#import <mach/mach_host.h>
+
 @implementation Avram
 
 #pragma mark -
@@ -19,9 +22,18 @@
     host_page_size(host_port, &pagesize);        
 
     vm_statistics_data_t vm_stat;
-
+    
     if (host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size) != KERN_SUCCESS) {
-        NSLog(@"Failed to fetch vm statistics");
+        NSDictionary *r1 = [NSDictionary dictionaryWithObjectsAndKeys:
+        @"false", @"success",
+        "No se pudo cargar vm statistics", @"error",
+        "", @"availableMemory"];
+        
+        CDVPluginResult* result;
+        result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:r1];
+
+        [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+        return;
     }
 
     /* Stats in bytes */ 
@@ -30,17 +42,17 @@
                         vm_stat.wire_count) * pagesize;
     natural_t mem_free = vm_stat.free_count * pagesize;
     natural_t mem_total = mem_used + mem_free;
+    
     NSLog(@"used: %u free: %u total: %u", mem_used, mem_free, mem_total);
 
-    NSDictionary *o1 = [NSDictionary dictionaryWithObjectsAndKeys:
-    true, @"success",
+    NSDictionary *r2 = [NSDictionary dictionaryWithObjectsAndKeys:
+    @"true", @"success",
     "", @"error",
-    mem_free, @"availableMemory"
-        nil];
+    mem_free, @"availableMemory"];
 
 
     CDVPluginResult* result;
-    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:o1];
+    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:r2];
 
     [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
