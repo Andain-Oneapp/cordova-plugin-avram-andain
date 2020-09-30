@@ -24,4 +24,13 @@
 		<source-file src="src/android/Avram.java" target-dir="src/cordova/plugin/avram"/>
 		<source-file src="src/android/Response.java" target-dir="src/cordova/plugin/avram"/>
 	</platform>
+
+	<platform name="ios">
+		<config-file parent="/*" target="config.xml">
+			<feature name="Avram">
+				<param name="ios-package" value="Avram"/>
+			</feature>
+		</config-file>
+		<source-file src="src/ios/Avram.swift"/>
+	</platform>
 </plugin>
